@@ -16,7 +16,7 @@ current_filename = None
 
 #Save Command
 def Save():
-    print('SAVE!!!!')
+    print("Saving changes ...")
     # filename = dialog.askopenfilename(initialdir='C:\\Users\\mike\\Documents', title='Save python file', filetypes=(('python files', '*.py'),('python files', '*.pyw'),('text files', '*.txt'),('all files','*.*')))
     print(current_filename)
     file = open(current_filename, 'w')
@@ -24,7 +24,7 @@ def Save():
 
 #Save As Command
 def Save_As():
-    print('SAVE AS!!!!')
+    print('Saving as new file ...')
     # filename = dialog.askopenfilename(initialdir='C:\\Users\\mike\\Documents', title='Save python file', filetypes=(('python files', '*.py'),('python files', '*.pyw'),('text files', '*.txt'),('all files','*.*')))
     filename = filedialog.asksaveasfilename()
     file = open(filename, 'w')
@@ -32,7 +32,7 @@ def Save_As():
     
 #Open Command
 def Open():
-    print('OPEN!!!!')
+    print("Opening file ...")
     filename = filedialog.askopenfilename()
     file = open(filename, 'r')
     text = file.read()
@@ -53,9 +53,6 @@ file.add_separator()
 file.add_command(label='Exit', command=exit)
 menu1.add_cascade(label='File', menu=file) #add the file menu to the menu
 
-#Run Button
-#menu1.add_command(label='Run')
-
 #Frame
 frame1 = tk.Frame(
     master = win,
@@ -72,6 +69,4 @@ editArea = scrolledtext.ScrolledText(
 editArea.pack(fill=tk.BOTH, expand=True)
 
 
-
-               
 win.mainloop()
